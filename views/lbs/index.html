@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>百度地图api调用测试页</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>百度地图api调用测试页</h1>
+    <h3>方式一：输入关键字，给出详细地址</h3>
+    <input id="keyword" placeholder="例子：中国电子大厦"/>
+    <button id="keywordsubmit">走你</button>
+    <br>
+    方便复制：中国电子大厦
+    <h3>方式二：输入坐标，给出详细地址</h3>
+    <input id="location" placeholder="例子：39.983424,116.322987"/>
+    <button id="locationsubmit">走你</button>
+    <br>
+    方便复制：39.985406889018,116.31842993014
+	<h3>方式二：通过ip给出详细地址</h3>
+    <button id="ipsubmit">走你</button>
+    <br>
+    <script>
+      var $ = function (id) {
+        return document.getElementById(id);
+      }
+      $('keywordsubmit').onclick=function(){
+        location.href = 'lbs/k/'+$('keyword').value;
+      }
+      $('locationsubmit').onclick=function(){
+        location.href = 'lbs/c/'+$('location').value;
+      }
+	  $('ipsubmit').onclick=function(){
+        location.href = 'lbs/ip/';
+      }
+    </script>
+  </body>
+</html>

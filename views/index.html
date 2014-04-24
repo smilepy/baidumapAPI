@@ -1,0 +1,42 @@
+<% include header.html %>
+
+<p  ><div align="right" ><a href="/login"  style="position:absolute;left:1530px;">登录</a></div></p>
+<div align="center">
+<img src="/images/indexlogo1.png" style="position:relative;top:50px" alt="Ballade" >
+</div>
+
+<div align="center">
+    <input id="tinput" type="text" style="position:relative;top:60px;width:550px"></input>
+</div>
+<button id="su1" style="position:relative;top:20px; left: 1085px; height: 30px; width: 79px;">百度一下 </button>
+<script>
+     
+      $('#su1').on('click',function(){
+            if($('#tinput').val()=='')
+            {
+              location.href = '/lbs/init/lng/116.404/lat/39.915';
+            }
+            else
+            {
+              location.href = '/lbs/init/word/'+$('#tinput').val();
+            }
+      });
+      $('#tinput').keyup(function(){
+      		if(event.keyCode == 13)
+      		{
+            //var val='';
+      			//location.href = '/lbs/k/'+$('#tinput').val();
+            if($('#tinput').val()=='')
+            {
+              location.href = '/lbs/init/lng/116.404/lat/39.915';
+            }
+            else
+            {
+              location.href = '/lbs/init/word/'+$('#tinput').val();
+            }
+      		}
+      	 
+      });
+</script>
+
+<% include footer.html %>
